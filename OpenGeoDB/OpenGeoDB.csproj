@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E8F71E82-AE80-4FFE-AD39-4B5751B462AD}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UseMSBuildEngine>true</UseMSBuildEngine>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OpenGeoDB</RootNamespace>
+    <AssemblyName>OpenGeoDB</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="AppStart.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Models\ZipCodeModel.cs" />
+    <Compile Include="Models\CityModel.cs" />
+    <Compile Include="Services\Update\UpdateService.cs" />
+    <Compile Include="Services\Update\IUpdateService.cs" />
+    <Compile Include="Repositories\Cities\CitiesRepository.cs" />
+    <Compile Include="Repositories\Cities\ICitiesRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\ZipCodes\IZipCodesRepository.cs" />
+    <Compile Include="Repositories\ZipCodes\ZipCodesRepository.cs" />
+    <Compile Include="Services\Alert\IAlertService.cs" />
+    <Compile Include="Services\Alert\DisposableAction.cs" />
+    <Compile Include="ViewModels\Cities\CitiesViewModel.cs" />
+    <Compile Include="ViewModels\Cities\CityItemViewModel.cs" />
+    <Compile Include="ViewModels\Update\UpdateViewModel.cs" />
+    <Compile Include="Services\Data\IDataProvider.cs" />
+    <Compile Include="Models\RawZipCodeModel.cs" />
+    <Compile Include="Services\Data\CsvDataProvider.cs" />
+    <Compile Include="Services\EmbeddedResource\IEmbeddedResourceLoader.cs" />
+    <Compile Include="Services\EmbeddedResource\EmbeddedResourceLoader.cs" />
+    <Compile Include="ViewModels\ZipCodes\ZipCodeItemViewModel.cs" />
+    <Compile Include="ViewModels\ZipCodes\ZipCodesViewModel.cs" />
+    <Compile Include="ViewModels\ZipCode\ZipCodeViewModel.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Utilities\ZipCodeComparer.cs" />
+    <Compile Include="Services\Location\ILocationService.cs" />
+    <Compile Include="Models\LocationModel.cs" />
+    <Compile Include="Converters\LocationToStringConverter.cs" />
+    <Compile Include="Repositories\Update\IUpdateRepository.cs" />
+    <Compile Include="Models\UpdateModel.cs" />
+    <Compile Include="Repositories\Update\UpdateRepository.cs" />
+    <Compile Include="Services\Data\IDataStore.cs" />
+    <Compile Include="Services\Data\SQLiteDataStore.cs" />
+    <Compile Include="Services\Data\ISQLiteConnectionFactory.cs" />
+    <Compile Include="Resources\Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\ViewModelBase{TParameter}.cs" />
+    <Compile Include="Converters\GroupsToFlatValueConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Services\" />
+    <Folder Include="Models\" />
+    <Folder Include="Services\Update\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Services\Alert\" />
+    <Folder Include="ViewModels\Cities\" />
+    <Folder Include="ViewModels\Update\" />
+    <Folder Include="Services\Data\" />
+    <Folder Include="Services\EmbeddedResource\" />
+    <Folder Include="ViewModels\ZipCodes\" />
+    <Folder Include="ViewModels\ZipCode\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Utilities\" />
+    <Folder Include="Services\Location\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Repositories\Update\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\PLZ.tab">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\packages\MvvmCross.Platform.5.1.1\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\packages\MvvmCross.Core.5.1.1\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\packages\MvvmCross.Binding.5.1.1\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.Binding.5.1.1\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite-net">
+      <HintPath>..\packages\sqlite-net-pcl.1.4.118\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.1.8\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.8\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.8\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.ResxLocalization">
+      <HintPath>..\packages\MvvmCross.Plugin.ResxLocalization.5.1.1\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.ResxLocalization.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>

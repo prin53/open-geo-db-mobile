@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <fragment
+                android:id="@+id/MapFragment"
+                android:name="com.google.android.gms.maps.MapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/HeightMap"
+                app:uiRotateGestures="false"
+                app:uiScrollGestures="false"
+                app:uiTiltGestures="false"
+                app:uiZoomGestures="false" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/PaddingMedium"
+                android:paddingBottom="@dimen/PaddingSmall"
+                android:paddingLeft="@dimen/PaddingMedium"
+                android:paddingRight="@dimen/PaddingMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                app:MvxLang="Text SectionInformation, Source=LocalizedTextSource"
+                tools:text="Information" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="42dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/PaddingMedium"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    app:MvxLang="Text HintZip, Source=LocalizedTextSource"
+                    tools:text="Zip" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/PaddingMedium"
+                    android:paddingRight="@dimen/PaddingMedium"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    app:MvxBind="Text Zip"
+                    tools:text="123" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="42dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/PaddingMedium"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    app:MvxLang="Text HintCity, Source=LocalizedTextSource"
+                    tools:text="City" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/PaddingMedium"
+                    android:paddingRight="@dimen/PaddingMedium"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    app:MvxBind="Text City"
+                    tools:text="Berlin" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="42dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/PaddingMedium"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    app:MvxLang="Text HintLoсation, Source=LocalizedTextSource"
+                    tools:text="Location" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/PaddingMedium"
+                    android:paddingRight="@dimen/PaddingMedium"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    app:MvxBind="Text LocationToString(Location)"
+                    tools:text="123, 123" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/PaddingMedium"
+                android:paddingBottom="@dimen/PaddingSmall"
+                android:paddingLeft="@dimen/PaddingMedium"
+                android:paddingRight="@dimen/PaddingMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                app:MvxLang="Text SectionNearby, Source=LocalizedTextSource"
+                tools:text="Nearby" />
+            <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
+                android:id="@+id/RecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingRight="@dimen/PaddingMedium"
+                android:scrollbars="none"
+                android:nestedScrollingEnabled="false"
+                app:MvxItemTemplate="@layout/itemviewzipcode"
+                app:MvxBind="ItemsSource Nearby; ItemClick SelectCommand" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

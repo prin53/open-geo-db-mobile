@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6799924E-F7F8-40DB-BE92-4ABE3F5BFE43}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OpenGeoDB.Test.Unit</RootNamespace>
+    <AssemblyName>OpenGeoDB.Test.Unit</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.3.7.1\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\packages\MvvmCross.Platform.5.1.1\lib\net45\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.Wpf">
+      <HintPath>..\packages\MvvmCross.Platform.5.1.1\lib\net45\MvvmCross.Platform.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\packages\MvvmCross.Core.5.1.1\lib\net45\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Wpf">
+      <HintPath>..\packages\MvvmCross.Core.5.1.1\lib\net45\MvvmCross.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Test.Core">
+      <HintPath>..\packages\MvvmCross.Tests.5.1.1\lib\portable45-net45+win8+wp8+wpa81\MvvmCross.Test.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.4.1.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.7.99\lib\net45\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\packages\MvvmCross.Binding.5.1.1\lib\net45\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding.Wpf">
+      <HintPath>..\packages\MvvmCross.Binding.5.1.1\lib\net45\MvvmCross.Binding.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.Binding.5.1.1\lib\net45\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.ResxLocalization">
+      <HintPath>..\packages\MvvmCross.Plugin.ResxLocalization.5.1.1\lib\dotnet\MvvmCross.Plugins.ResxLocalization.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppStartTests.cs" />
+    <Compile Include="Mocks\DisposableActionMock.cs" />
+    <Compile Include="Helpers\MockHelpers.cs" />
+    <Compile Include="ViewModels\Update\UpdateViewModelTests.cs" />
+    <Compile Include="ViewModels\Cities\CitiesViewModelTests.cs" />
+    <Compile Include="ViewModels\ZipCodes\ZipCodeItemViewModelTests.cs" />
+    <Compile Include="ViewModels\Cities\CityItemViewModelTests.cs" />
+    <Compile Include="ViewModels\ZipCodes\ZipCodesViewModelTests.cs" />
+    <Compile Include="ViewModels\ZipCode\ZipCodeViewModelTests.cs" />
+    <Compile Include="Repositories\Cities\CitiesRepositoryTests.cs" />
+    <Compile Include="Repositories\Update\UpdateRepositoryTests.cs" />
+    <Compile Include="Utilities\ZipCodeComparerTests.cs" />
+    <Compile Include="Repositories\ZipCodes\ZipCodesRepositoryTests.cs" />
+    <Compile Include="Services\Update\UpdateServiceTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OpenGeoDB\OpenGeoDB.csproj">
+      <Project>{E8F71E82-AE80-4FFE-AD39-4B5751B462AD}</Project>
+      <Name>OpenGeoDB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Mocks\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="ViewModels\Update\" />
+    <Folder Include="ViewModels\Cities\" />
+    <Folder Include="ViewModels\ZipCodes\" />
+    <Folder Include="ViewModels\ZipCode\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\Cities\" />
+    <Folder Include="Repositories\Update\" />
+    <Folder Include="Utilities\" />
+    <Folder Include="Repositories\ZipCodes\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Update\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

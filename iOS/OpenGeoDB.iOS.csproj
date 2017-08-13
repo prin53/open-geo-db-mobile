@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{97DAE240-7F1A-4B73-87E6-98875BA01E53}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>OpenGeoDB.iOS</RootNamespace>
+    <AssemblyName>OpenGeoDB.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>32755</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IOSDebuggerPort>39118</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\packages\MvvmCross.Platform.5.1.1\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.iOS">
+      <HintPath>..\packages\MvvmCross.Platform.5.1.1\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\packages\MvvmCross.Core.5.1.1\lib\Xamarin.iOS10\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.iOS">
+      <HintPath>..\packages\MvvmCross.Core.5.1.1\lib\Xamarin.iOS10\MvvmCross.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\packages\MvvmCross.Binding.5.1.1\lib\Xamarin.iOS10\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding.iOS">
+      <HintPath>..\packages\MvvmCross.Binding.5.1.1\lib\Xamarin.iOS10\MvvmCross.Binding.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.Binding.5.1.1\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite-net">
+      <HintPath>..\packages\sqlite-net-pcl.1.4.118\lib\netstandard1.1\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.1.8\lib\Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.sqlite3">
+      <HintPath>..\packages\SQLitePCLRaw.provider.sqlite3.ios_unified.1.1.8\lib\Xamarin.iOS10\SQLitePCLRaw.provider.sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.8\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.8\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.ResxLocalization">
+      <HintPath>..\packages\MvvmCross.Plugin.ResxLocalization.5.1.1\lib\Xamarin.iOS10\MvvmCross.Plugins.ResxLocalization.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OpenGeoDB\OpenGeoDB.csproj">
+      <Project>{E8F71E82-AE80-4FFE-AD39-4B5751B462AD}</Project>
+      <Name>OpenGeoDB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Mail.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Mail.imageset\Mail.pdf" />
+    <ImageAsset Include="Assets.xcassets\City.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\City.imageset\City%402x.png" />
+    <ImageAsset Include="Assets.xcassets\City.imageset\City%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Location.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Location.imageset\Location%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Location.imageset\Location%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Zip.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Zip.imageset\Zip%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Zip.imageset\Zip%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="Assets.xcassets\Mail.imageset\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Data\" />
+    <Folder Include="Assets.xcassets\City.imageset\" />
+    <Folder Include="Assets.xcassets\Location.imageset\" />
+    <Folder Include="Views\Cities\" />
+    <Folder Include="Views\Update\" />
+    <Folder Include="Views\ZipCodes\" />
+    <Folder Include="Views\ZipCode\" />
+    <Folder Include="Services\Alert\" />
+    <Folder Include="Services\Location\" />
+    <Folder Include="Assets.xcassets\Zip.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="Services\Data\SQLiteConnectionFactory.cs" />
+    <Compile Include="Views\Cities\CitiesView.cs" />
+    <Compile Include="Views\Cities\CitiesView.designer.cs">
+      <DependentUpon>CitiesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Update\UpdateView.cs" />
+    <Compile Include="Views\Update\UpdateView.designer.cs">
+      <DependentUpon>UpdateView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cities\CityTableViewCell.cs" />
+    <Compile Include="Views\Cities\CityTableViewCell.designer.cs">
+      <DependentUpon>CityTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ZipCodes\ZipCodeTableViewCell.cs" />
+    <Compile Include="Views\ZipCodes\ZipCodeTableViewCell.designer.cs">
+      <DependentUpon>ZipCodeTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ZipCodes\ZipCodesView.cs" />
+    <Compile Include="Views\ZipCodes\ZipCodesView.designer.cs">
+      <DependentUpon>ZipCodesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ZipCode\ZipCodeView.cs" />
+    <Compile Include="Views\ZipCode\ZipCodeView.designer.cs">
+      <DependentUpon>ZipCodeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ZipCode\ZipCodeTableViewSource.cs" />
+    <Compile Include="Views\ZipCode\ItemTableViewCell.cs" />
+    <Compile Include="Views\ZipCode\ItemTableViewCell.designer.cs">
+      <DependentUpon>ItemTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ZipCode\MapTableViewCell.cs" />
+    <Compile Include="Views\ZipCode\MapTableViewCell.designer.cs">
+      <DependentUpon>MapTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ZipCode\ZipCodeAnnotation.cs" />
+    <Compile Include="Views\ZipCode\NearestZipCodeTableViewCell.cs" />
+    <Compile Include="Views\ZipCode\NearestZipCodeTableViewCell.designer.cs">
+      <DependentUpon>NearestZipCodeTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Alert\AlertService.cs" />
+    <Compile Include="Extensions\UIApplicationExtensions.cs" />
+    <Compile Include="Views\Cities\CitiesTableViewSource.cs" />
+    <Compile Include="Services\Location\LocationService.cs" />
+    <Compile Include="Extensions\LocationModelExtensions.cs" />
+    <Compile Include="Views\ZipCode\ZipCodeMapViewDelegate.cs" />
+    <Compile Include="Visual\Images.cs" />
+    <Compile Include="Visual\Palette.cs" />
+    <Compile Include="Visual\Theme.cs" />
+    <Compile Include="Visual\Dimensions.cs" />
+    <Compile Include="Bootstrap\ResxLocalizationPluginBootstrap.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>

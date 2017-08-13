@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <dimen name="PaddingLarge">42dp</dimen>
+    <dimen name="PaddingMedium">16dp</dimen>
+    <dimen name="PaddingSmall">8dp</dimen>
+    <dimen name="HeightMap">256dp</dimen>
+</resources>
